@@ -1,0 +1,39 @@
+<mat-sidenav-container class="main-container">
+  <mat-sidenav
+    class="side-nav-style"
+    #sidenav
+    mode="side"
+    *ngIf="!isLoginPage()"
+    opened
+  >
+    <div class="logo-container"><img src="assets/logo2.png" alt="Logo" /></div>
+    <hr class="side-nav-split" />
+    <div class="side-nav-options">
+      <div class="side-nav-icons" routerLink="/dashboard">
+        <span class="material-symbols-outlined icon-size"> dashboard </span>
+        <label class="icon-name">dashboard</label>
+      </div>
+      <div class="side-nav-icons" routerLink="/analytics">
+        <span class="material-symbols-outlined icon-size"> query_stats </span>
+        <label class="icon-name">analytics</label>
+      </div>
+      <div class="side-nav-icons" routerLink="/opportunities">
+        <span class="material-symbols-outlined icon-size">
+          person_raised_hand
+        </span>
+        <label class="icon-name">opportunities</label>
+      </div>
+      <div class="side-nav-icons" routerLink="/applications">
+        <span class="material-symbols-outlined icon-size"> description </span>
+        <label class="icon-name">applications</label>
+      </div>
+      <div class="side-nav-icons" routerLink="/org-settings">
+        <span class="material-symbols-outlined icon-size"> settings </span>
+        <label class="icon-name">settings</label>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="side-nav-container">
+    <router-outlet></router-outlet
+  ></mat-sidenav-content>
+</mat-sidenav-container>

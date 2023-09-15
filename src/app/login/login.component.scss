@@ -1,0 +1,135 @@
+.login-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.login-image-container {
+  width: 40%;
+  height: 100%;
+}
+.login-image-container img {
+  object-fit: cover;
+  object-position: right bottom;
+  height: 100vh;
+  padding: 20px;
+  margin-left: 100px;
+}
+.login-form-container {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  height: 100%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.credentials-container {
+  padding-left: 14.5%;
+  padding-right: 14.5%;
+  height: 50%;
+  width: 70%;
+}
+.login-credentials {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+.credential-header {
+  padding-bottom: 10px;
+}
+.credential-input {
+  height: 40px;
+  padding-left: 10px;
+  width: 100%;
+  outline: none;
+  border: hidden;
+}
+.input-form {
+  width: 100%;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+}
+.input-form:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.icon-display {
+  color: grey;
+}
+.credential-header {
+  font-size: 18px;
+}
+.validation-error {
+  padding-top: 5px;
+  padding-left: 10px;
+  color: #952323;
+}
+.toggle-password-btn {
+  color: grey;
+  padding-right: 10px;
+  cursor: pointer;
+}
+.login-btn {
+  width: 60%;
+  height: 40px;
+  background: #4d89eb 0% 0% no-repeat padding-box;
+  border-radius: 8px;
+  opacity: 1;
+  color: white;
+  outline: none;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.login-btn-position {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.forgot-password-btn {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  font-size: 14px;
+  padding-top: 8px;
+  text-decoration: underline;
+  color: grey;
+}
+.password-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.login-logo-container img {
+  height: 120px;
+}
+.login-logo-container {
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+.login-validation-error {
+  width: 100%;
+  padding-top: 5px;
+  text-align: center;
+  color: #952323;
+}
+.credential-input-form {
+  width: 100%;
+}
+
+.error-popup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 113, 113);
+  color: #fff;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}

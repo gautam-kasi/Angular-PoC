@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import "ngx-toastr/toastr";
+
+body {
+  margin: 0px !important;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.tab-header {
+  color: #021028;
+  padding-top: 32px;
+  text-transform: capitalize;
+  padding-left: 32px;
+}

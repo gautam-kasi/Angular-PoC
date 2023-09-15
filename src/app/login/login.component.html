@@ -1,0 +1,120 @@
+<div class="login-container">
+  <div class="login-image-container">
+    <img src="assets/girl.jpg" alt="Logo" />
+  </div>
+  <div class="login-form-container">
+    <div class="credentials-container">
+      <div class="login-logo-container">
+        <img src="assets/logo2.png" alt="Logo" />
+      </div>
+      <div *ngIf="error.alert" class="error-popup">
+        <label>{{ error.message }}</label>
+        <span class="material-symbols-outlined" (click)="closeError(false)"
+          >close</span
+        >
+      </div>
+      <form
+        class="credential-input-form"
+        (ngSubmit)="onCredSubmit()"
+        #loginForm="ngForm"
+      >
+        <div class="login-credentials">
+          <label class="credential-header">Username</label>
+          <div class="input-form">
+            <span class="material-symbols-outlined icon-display"> person </span>
+            <input
+              [(ngModel)]="credentials.username"
+              name="username"
+              class="credential-input"
+              placeholder="Email/mobile no."
+              required
+              #usernameInput="ngModel"
+              pattern="^\d{10}$|^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+              minlength="10"
+            />
+          </div>
+
+          <div
+            *ngIf="
+              usernameInput.invalid &&
+              (usernameInput.dirty || usernameInput.touched)
+            "
+          >
+            <div
+              *ngIf="usernameInput.errors?.['required']"
+              class="validation-error"
+            >
+              Username is required.
+            </div>
+            <div
+              *ngIf="usernameInput.errors?.['pattern']"
+              class="validation-error"
+            >
+              Invalid email or phone number format.
+              <div
+                *ngIf="usernameInput.errors?.['minlength']"
+                class="validation-error"
+              >
+                or
+              </div>
+            </div>
+            <div
+              *ngIf="usernameInput.errors?.['minlength']"
+              class="validation-error"
+            >
+              Mobile should have at least 10 characters and only digits.
+            </div>
+          </div>
+        </div>
+        <div class="login-credentials">
+          <label class="credential-header">Password</label>
+          <div class="input-form">
+            <span class="material-symbols-outlined icon-display"> lock </span>
+            <input
+              [(ngModel)]="credentials.password"
+              name="password"
+              class="credential-input"
+              placeholder="Your password"
+              [type]="passwordFieldType"
+              required
+              #passwordInput="ngModel"
+              minlength="5"
+            />
+            <span
+              class="toggle-password-btn"
+              (click)="togglePasswordVisibility()"
+            >
+              {{ showPassword ? "Hide" : "Show" }}
+            </span>
+          </div>
+          <div class="password-info">
+            <div
+              style="width: 100%"
+              *ngIf="
+                passwordInput.invalid &&
+                (passwordInput.dirty || passwordInput.touched)
+              "
+            >
+              <div
+                *ngIf="passwordInput.errors?.['required']"
+                class="validation-error"
+              >
+                Password is required.
+              </div>
+              <div
+                *ngIf="passwordInput.errors?.['minlength']"
+                class="validation-error"
+              >
+                Password should have at least 5 characters.
+              </div>
+            </div>
+            <span class="forgot-password-btn">Forgot password</span>
+          </div>
+        </div>
+        <div class="login-btn-position">
+          <button class="login-btn">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
