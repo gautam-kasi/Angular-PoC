@@ -1,31 +1,30 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { Component, Input } from "@angular/core";
+import { Router } from "@angular/router";
+import { AuthService } from "../auth.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent {
   @Input() credentials: any = {
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   };
-  passwordFieldType = 'password';
+  passwordFieldType = "password";
   showPassword = false;
   public error = {
-    message: '',
+    message: "",
     alert: false,
   };
   togglePasswordVisibility() {
-    this.passwordFieldType =
-      this.passwordFieldType === 'password' ? 'text' : 'password';
+    this.passwordFieldType = this.passwordFieldType === "password" ? "text" : "password";
     this.showPassword = !this.showPassword;
   }
   constructor(private authService: AuthService, private router: Router) {
     if (this.authService.isAuthenticatedUser()) {
-      this.router.navigate(['/dashboard'], { replaceUrl: true });
+      this.router.navigate(["/dashboard"], { replaceUrl: true });
     }
   }
 
@@ -34,16 +33,17 @@ export class LoginComponent {
   }
 
   onCredSubmit() {
-    const { email, password } = this.credentials;
-    this.authService.authenticate(email, password).subscribe({
+    const { username, password } = this.credentials;
+    console.log(username);
+    this.authService.authenticate(username, password).subscribe({
       next: (isValid) => {
         if (isValid) {
-          console.log('Login successful');
-          localStorage.setItem('access_token', this.credentials.username);
-          this.router.navigate(['/dashboard'], { replaceUrl: true });
+          console.log("Login successful");
+          localStorage.setItem("access_token", this.credentials.username);
+          this.router.navigate(["/dashboard"], { replaceUrl: true });
         } else {
-          console.log('Invalid username or password');
-          this.error = { message: 'Invalid username or password', alert: true };
+          // console.log("Invalid username or password");
+          this.error = { message: this.authService.error, alert: true };
         }
       },
       error: (error) => {},
