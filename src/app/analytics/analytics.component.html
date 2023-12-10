@@ -1,1 +1,9 @@
-<div><h2 class="tab-header">analytics</h2></div>
+<div style="color: black">
+  <h2 class="tab-header">Weather Forecast</h2>
+  <div style="padding-left: 32px">
+    <input [(ngModel)]="city" class="input-tag" placeholder="Enter city" />
+    <button class="search-btn" (click)="search()">Search</button>
+  </div>
+  <app-current-weather [weatherData]="currentWeather"></app-current-weather>
+  <app-forecast [forecastData]="forecast"></app-forecast>
+</div>

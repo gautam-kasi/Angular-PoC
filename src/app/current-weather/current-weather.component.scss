@@ -1,0 +1,16 @@
+.current-weather-card {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background: #f6f6f6;
+  width: 400px;
+  height: 200px;
+  box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+}
+.current-weather-text {
+  color: #021028;
+  padding-top: 32px;
+  text-transform: capitalize;
+}

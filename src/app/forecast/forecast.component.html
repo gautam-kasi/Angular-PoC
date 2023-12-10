@@ -1,0 +1,40 @@
+<!-- forecast.component.html -->
+<div
+  *ngIf="forecastData && forecastData.data && forecastData.weather"
+  style="padding-left: 32px"
+>
+  <h2 class="forecast-weather-text">
+    Forecast for {{ forecastData.data.name }},
+    {{ forecastData.data.country }}
+  </h2>
+  <div class="card-align">
+    <div *ngFor="let key of forecastData.weather" style="display: flex">
+      <div class="mini-card">
+        <p class="date-forecast">{{ key.date }}</p>
+        <div class="forecast-weather-display">
+          <div class="weather-details">
+            <span>Temprature: {{ key.items[0].main.temp }}&deg;C</span>
+            <span>Humidity: {{ key.items[0].main.humidity }}%</span>
+            <span>wind speed: {{ key.items[0].wind.speed }}m/s</span>
+            <span>weather: {{ key.items[0].weather[0].description }}</span>
+          </div>
+
+          <div>
+            <img
+              [src]="
+                'https://openweathermap.org/img/wn/' +
+                key.items[0].weather[0].icon +
+                '@2x.png'
+              "
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!forecastData" style="margin-left: 32px">
+  <p>No forecast data available. Please enter a valid city.</p>
+</div>

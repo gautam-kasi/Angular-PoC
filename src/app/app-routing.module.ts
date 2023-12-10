@@ -1,48 +1,48 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './auth.guard';
-import { AnalyticsComponent } from './analytics/analytics.component';
-import { OpportunitiesComponent } from './opportunities/opportunities.component';
-import { ApplicationsComponent } from './applications/applications.component';
-import { SettingsComponent } from './settings/settings.component';
-import { TablayoutComponent } from './tablayout/tablayout.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { AnalyticsComponent } from "./analytics/analytics.component";
+import { ApplicationsComponent } from "./applications/applications.component";
+import { AuthGuard } from "./auth.guard";
+import { HomeComponent } from "./home/home.component";
+import { LoginComponent } from "./login/login.component";
+import { OpportunitiesComponent } from "./opportunities/opportunities.component";
+import { SettingsComponent } from "./settings/settings.component";
+import { TablayoutComponent } from "./tablayout/tablayout.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: TablayoutComponent,
     children: [
       {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'dashboard',
+        path: "",
+        pathMatch: "full",
+        redirectTo: "dashboard",
       },
       {
-        path: 'dashboard',
+        path: "dashboard",
         component: HomeComponent,
       },
       {
-        path: 'analytics',
+        path: "weather",
         component: AnalyticsComponent,
         canActivate: [AuthGuard],
       },
 
       {
-        path: 'opportunities',
+        path: "opportunities",
         component: OpportunitiesComponent,
         canActivate: [AuthGuard],
       },
 
       {
-        path: 'applications',
+        path: "applications",
         component: ApplicationsComponent,
         canActivate: [AuthGuard],
       },
 
       {
-        path: 'org-settings',
+        path: "org-settings",
         component: SettingsComponent,
         canActivate: [AuthGuard],
       },
@@ -50,8 +50,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
 
-  { path: 'login', component: LoginComponent },
-  { path: '**', redirectTo: 'dashboard' },
+  { path: "login", component: LoginComponent },
+  { path: "**", redirectTo: "dashboard" },
 ];
 
 @NgModule({

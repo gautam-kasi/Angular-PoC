@@ -1,0 +1,36 @@
+.mini-card {
+  padding: 20px;
+  background: #f6f6f6;
+  width: 400px;
+  height: 200px;
+  border: 2px solid #e5e4e2;
+  box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  margin-bottom: 20px;
+}
+.card-align {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.forecast-weather-text {
+  color: #021028;
+  padding-top: 16px;
+  text-transform: capitalize;
+}
+.forecast-weather-display {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.weather-details {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  justify-content: space-between;
+}
+.date-forecast {
+  color: #021028;
+  font-size: 24px;
+  text-decoration: solid;
+}

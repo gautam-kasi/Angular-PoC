@@ -16,6 +16,8 @@ import { ApplicationsComponent } from './applications/applications.component';
 
 import { SettingsComponent } from './settings/settings.component';
 import { TablayoutComponent } from './tablayout/tablayout.component';
+import { ForecastComponent } from './forecast/forecast.component';
+import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { TablayoutComponent } from './tablayout/tablayout.component';
     ApplicationsComponent,
     SettingsComponent,
     TablayoutComponent,
+    ForecastComponent,
+    CurrentWeatherComponent,
   ],
   imports: [
     BrowserModule,
